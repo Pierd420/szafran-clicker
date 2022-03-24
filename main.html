@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -5,9 +6,9 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Szafran clicker</title>
     <style>
-        #amogus {
+        #sus {
             width: 500px;
             height: auto;
             border: 2px, black;
@@ -15,68 +16,91 @@
             border-radius: 2px;
         }
 
-        #misz {
-            font-size: 20;
-
-
-        }
-
         #amogus1 {
             width: 200px;
             height: 100px;
+        }
+
+        #buttons {
+            height: 220px;
+            width: 120%;
+
         }
     </style>
 </head>
 
 <body>
-    <center><img src="sus.png" type="button" id="amogus" onClick="amogus()"><br>
+
+    <center><img src="sus.png" type="button" onClick="amogus()" id="sus" name="obraz"><br>
+
         <div id="misz">0
 
         </div>
-        <input type="text" id="x" />
-        <br>
+        <input type="text" id="x"><br>
+        <input type="text" id="z">
     </center>
     <br>
-    <button type="button" id="amogus1" onClick="amogus1()">
-        1000 pringels <br>
-        + 1 cps
-    </button>
-    <button type="button" id="amogus1" onClick="amogus2()">
-        5000 pringels <br>
-        + 5 cps
-    </button>
-    <button type="button" id="amogus1" onClick="amogus3()">
-        50000 pringels <br>
-        + 50 cps
-    </button>
-    <button type="button" id="amogus1" onClick="amogus4()">
-        1000000 pringels <br>
-        + 1000 cps
-    </button>
-    <button type="button" id="amogus1" onClick="amogus5()">
-        10000000 pringels <br>
-        + 10000 cps
-    </button>
-    <br>
-    <div id="gameTick">
-        0
+    <div id="buttons">
 
+        <button type="button" id="amogus1" onClick="amogus1()">
+            1000 pringels <br>
+            + 1 cps
+        </button>
+        <button type="button" id="amogus1" onClick="amogus2()">
+            5000 pringels <br>
+            + 6 cps
+        </button>
+        <button type="button" id="amogus1" onClick="amogus3()">
+            50.000 pringels <br>
+            + 65 cps
+        </button>
+        <button type="button" id="amogus1" onClick="amogus4()">
+            1.000.000 pringels <br>
+            + 1400 cps
+        </button>
+        <button type="button" id="amogus1" onClick="amogus5()">
+            10.000.000 pringels <br>
+            + 10.000 cps
+        </button>
+        <br>
+        <button type="button" id="amogus1" onclick="sus1()">
+            200 pringels<br>+1 na sekunde
+        </button>
+        <button type="button" id="amogus1" onclick="sus2()">
+            1500 pringels<br>+10 na sekunde
+        </button>
+        <button type="button" id="amogus1" onclick="sus3()">
+            100.000.000 pringels<br>+10.000.000 na sekunde
+        </button>
     </div>
+    <br>
+
 
 
 
 </body>
+
+
 <script type="text/javascript">
     var x = 1;
-    var z = 0
-    var misz = 0;
-    var sraka = () => { setTimeout(() => gameTick(), 1000); sraka(); }
+    var z = 0;
+    var misz = 1;
+    var Automat1 = 0;
+
+
+
+
+
+
+
+
 
 
     function amogus() {
 
         misz += x;
         document.getElementById("misz").innerHTML = misz;
+
 
     }
     amogus();
@@ -85,45 +109,93 @@
             x += 1
             misz -= 1000
             document.getElementById('x').value = 'cps boost = ' + x;
+            document.getElementById("misz").innerHTML = misz;
         }
     }
     amogus1();
     function amogus2() {
         if (misz >= 5000) {
-            x += 5
+            x += 6
             misz -= 5000
             document.getElementById('x').value = 'cps boost = ' + x;
+            document.getElementById("misz").innerHTML = misz;
         }
     }
     amogus2();
     function amogus3() {
         if (misz >= 50000) {
-            x += 50
+            x += 65
             misz -= 50000
             document.getElementById('x').value = 'cps boost = ' + x;
+            document.getElementById("misz").innerHTML = misz;
         }
     }
     amogus3();
     function amogus4() {
         if (misz >= 1000000) {
-            x += 1000
+            x += 1400
             misz -= 1000000
             document.getElementById('x').value = 'cps boost = ' + x;
+            document.getElementById("misz").innerHTML = misz;
         }
     }
     amogus4();
     function amogus5() {
         if (misz >= 10000000) {
-            x += 10000
+            x += 15000
             misz -= 10000000
             document.getElementById('x').value = 'cps boost = ' + x;
+            document.getElementById("misz").innerHTML = misz;
         }
     }
-    amogus5();
+
+
+
+    //--------------------------------------------------------------------------------------AUTOMATO-START----------------------------------------------------------------------------------------------
+
+
     function gameTick() {
-        x++;
+
+        misz += Automat1;
+
+        document.getElementById("misz").innerHTML = misz;
+        document.getElementById('z').value = 'freepringels = ' + Automat1;
+
     }
-    gameTick()
+
+    setInterval(gameTick, 1000);
+
+    function sus1() {
+        if (misz >= 200) {
+            Automat1 += 1
+            misz -= 200
+            document.getElementById('z').value = 'freepringels = ' + Automat1;
+            document.getElementById("misz").innerHTML = misz;
+        }
+    }
+    function sus2() {
+        if (misz >= 1500) {
+            Automat1 += 10
+            misz -= 1500
+            document.getElementById('z').value = 'freeprongels = ' + Automat1;
+            document.getElementById("misz").innerHTML = misz;
+        }
+    }
+    function sus3() {
+        if (misz >= 100000000) {
+            Automat1 += 10000000
+            misz -= 100000000
+            document.getElementById('z').value = 'freeprongels = ' + Automat1;
+            document.getElementById("misz").innerHTML = misz;
+        }
+    }
+
+
+    //--------------------------------------------------------------------------------------AUTOMATO-KONIEC----------------------------------------------------------------------------------------------
+
+
+
+
 
 
 
